@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:gravity="center_horizontal"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:layout_width="187dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="89dp"
+        android:layout_marginEnd="0dp"
+        android:text="Today's Steps"
+        android:textColor="@color/black"
+        android:textSize="30dp"
+        android:textStyle="bold"></TextView>
+
+    <RelativeLayout
+        android:id="@+id/progress_layout"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_margin="10dp">
+
+        <!--progress bar implementation-->
+        <ProgressBar
+            android:id="@+id/progress_bar"
+            style="?android:attr/progressBarStyleHorizontal"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/circular_shape"
+            android:indeterminate="false"
+            android:progressDrawable="@drawable/circular_progress_bar"
+            android:textAlignment="center" />
+
+
+        <!--Text implementation in center of the progress bar-->
+        <TextView
+            android:id="@+id/progress_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:gravity="center"
+            android:text="---"
+            android:textColor="@color/black"
+            android:textSize="28sp"
+            android:textStyle="bold" />
+    </RelativeLayout>
+    <!-- User Input for Daily Goal -->
+    <EditText
+        android:id="@+id/editTextDailyGoal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Set Your Goal for the Day"
+        android:inputType="number" />
+
+    <!-- Daily Goal Progress Bar -->
+    <RelativeLayout
+        android:id="@+id/daily_goal_layout"
+        android:layout_width="400dp"
+        android:layout_height="100dp"
+        android:layout_margin="10dp">
+
+        <ProgressBar
+            android:id="@+id/today_progress_bar"
+            style="?android:attr/progressBarStyleHorizontal"
+            android:layout_width="339dp"
+            android:layout_height="match_parent"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginEnd="0dp"
+            android:layout_marginBottom="0dp"
+            android:indeterminate="false"
+            android:max="100"
+            android:progress="25"
+            android:progressTint="@color/black" />
+
+        <TextView
+            android:id="@+id/daily_goal_progress_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:gravity="center"
+            android:text="25%"
+            android:textColor="@color/black"
+            android:textSize="28sp"
+            android:textStyle="bold" />
+    </RelativeLayout>
+
+    <!-- User Input for Weekly Goal -->
+    <EditText
+        android:id="@+id/editTextWeeklyGoal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Set Your Goal for the Week"
+        android:inputType="number" />
+
+    <!-- Weekly Goal Progress Bar -->
+    <RelativeLayout
+        android:id="@+id/weekly_goal_layout"
+        android:layout_width="400dp"
+        android:layout_height="100dp"
+        android:layout_margin="10dp">
+
+        <ProgressBar
+            android:id="@+id/weekly_goal_progress_bar"
+            style="?android:attr/progressBarStyleHorizontal"
+            android:layout_width="344dp"
+            android:layout_height="match_parent"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginEnd="0dp"
+            android:layout_marginBottom="0dp"
+            android:indeterminate="false"
+            android:max="100"
+            android:progress="10"
+            android:progressTint="@color/black" />
+
+        <TextView
+            android:id="@+id/weekly_goal_progress_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:gravity="center"
+            android:text="10%"
+            android:textColor="@color/black"
+            android:textSize="28sp"
+            android:textStyle="bold" />
+    </RelativeLayout>
+    <Button
+        android:id="@+id/reset_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Reset Steps"
+        app:layout_constraintTop_toBottomOf="@+id/progress_layout"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:onClick="resetSteps"/>
+
+</LinearLayout>
